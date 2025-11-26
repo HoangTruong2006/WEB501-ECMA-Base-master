@@ -19,8 +19,24 @@
       "image": "https://picsum.photos/400/300?random=3",
       "description": "Thành phố ngàn hoa với khí hậu mát mẻ quanh năm",
       "available": 10
+    },
+    {
+      "name": "Tour du lịch Ai Cập ",
+      "destination": "Ai Cập",
+      "duration": "7 ngày 7 đêm",
+      "price": 24000000,
+      "available": "Còn chỗ",
+      "image": "https://picsum.photos/400/300?random=4",
+      "id": 4
+    },
+    {
+      "name": "Du Lịch Anh Quốc 2N3D",
+      "destination": "Anh Quốc",
+      "duration": "2 Ngày 3 Đêm",
+      "price": 160000000,
+      "available": "Còn chỗ",
+      "image": "https://picsum.photos/400/300",
+      "id": 5
     }
-    
-
   ]
 }

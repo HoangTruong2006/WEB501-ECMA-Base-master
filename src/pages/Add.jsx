@@ -1,98 +1,123 @@
+import { useState } from "react";
+import axios from "axios";
+
 function Add() {
+  const [name, setName] = useState("");
+  const [destination, setDestination] = useState("");
+  const [duration, setDuration] = useState("");
+  const [price, setPrice] = useState("");
+  const [available, setAvailable] = useState("");
+  const [image, setImage] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const newTour = {
+      name,
+      destination,
+      duration,
+      price: Number(price),
+      available,
+      image,
+    };
+
+    try {
+      await axios.post("http://localhost:3000/tours", newTour);
+      alert("Thêm tour thành công!");
+    } catch (err) {
+      console.error(err);
+      alert("Lỗi khi thêm tour!");
+    }
+  };
+
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-semibold mb-6">Thêm mới</h1>
+      <h1 className="text-2xl font-semibold mb-6">Thêm Tour</h1>
 
-      <form className="space-y-6">
-        {/* Text input */}
+      <form className="space-y-6" onSubmit={handleSubmit}>
+        {/* Name */}
         <div>
-          <label htmlFor="text" className="block font-medium mb-1">
-            Text
-          </label>
+          <label className="block font-medium mb-1">Tên Tour</label>
           <input
             type="text"
-            id="text"
-            className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+            required
           />
         </div>
 
-        {/* Checkbox list */}
+        {/* Destination */}
         <div>
-          <label className="block font-medium mb-1">Radio</label>
-
-          <div className="flex items-center space-x-2 mb-2">
-            <input
-              type="checkbox"
-              id="flexCheck1"
-              className="h-4 w-4 text-blue-600 rounded border-gray-300"
-            />
-            <label htmlFor="flexCheck1" className="text-gray-700">
-              checkbox 1
-            </label>
-          </div>
-
-          <div className="flex items-center space-x-2">
-            <input
-              type="checkbox"
-              id="flexCheck2"
-              className="h-4 w-4 text-blue-600 rounded border-gray-300"
-            />
-            <label htmlFor="flexCheck2" className="text-gray-700">
-              checkbox 2
-            </label>
-          </div>
+          <label className="block font-medium mb-1">Điểm đến</label>
+          <input
+            type="text"
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+            required
+          />
         </div>
 
-        {/* Radio list */}
+        {/* Duration */}
         <div>
-          <label className="block font-medium mb-1">Checkbox</label>
-
-          <div className="flex items-center space-x-2 mb-2">
-            <input
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadio1"
-              className="h-4 w-4 text-blue-600"
-            />
-            <label htmlFor="flexRadio1" className="text-gray-700">
-              Checkbox 1
-            </label>
-          </div>
-
-          <div className="flex items-center space-x-2">
-            <input
-              type="radio"
-              name="flexRadioDefault"
-              id="flexRadio2"
-              className="h-4 w-4 text-blue-600"
-            />
-            <label htmlFor="flexRadio2" className="text-gray-700">
-              Checkbox 2
-            </label>
-          </div>
+          <label className="block font-medium mb-1">Thời gian</label>
+          <input
+            type="text"
+            value={duration}
+            onChange={(e) => setDuration(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+            placeholder="Ví dụ: 3 ngày 2 đêm"
+            required
+          />
         </div>
 
-        {/* Select */}
+        {/* Price */}
         <div>
-          <label htmlFor="selectOption" className="block font-medium mb-1">
-            Select - option
-          </label>
+          <label className="block font-medium mb-1">Giá</label>
+          <input
+            type="number"
+            value={price}
+            onChange={(e) => setPrice(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+            required
+          />
+        </div>
+
+        {/* Available */}
+        <div>
+          <label className="block font-medium mb-1">Tình trạng</label>
           <select
-            id="selectOption"
-            className="w-full border rounded-lg px-3 py-2 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={available}
+            onChange={(e) => setAvailable(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+            required
           >
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            <option value="">-- Chọn --</option>
+            <option value="Còn chỗ">Còn chỗ</option>
+            <option value="Hết chỗ">Hết chỗ</option>
           </select>
         </div>
 
-        {/* Submit button */}
+        {/* Image */}
+        <div>
+          <label className="block font-medium mb-1">Ảnh (URL)</label>
+          <input
+            type="text"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+            className="w-full border rounded-lg px-3 py-2"
+            placeholder="https://picsum.photos/400/300"
+            required
+          />
+        </div>
+
+        {/* Submit */}
         <button
           type="submit"
-          className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+          className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
         >
-          Submit
+          Thêm Tour
         </button>
       </form>
     </div>
