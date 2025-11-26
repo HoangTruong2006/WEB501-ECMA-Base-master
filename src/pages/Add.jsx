@@ -101,7 +101,7 @@ function Add() {
 
         {/* Image */}
         <div>
-          <label className="block font-medium mb-1">Ảnh (URL)</label>
+          <label className="block font-medium mb-1">Ảnh</label>
           <input
             type="text"
             value={image}
