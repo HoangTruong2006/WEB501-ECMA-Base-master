@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 function Add() {
   const [name, setName] = useState("");
@@ -23,10 +24,18 @@ function Add() {
 
     try {
       await axios.post("http://localhost:3000/tours", newTour);
-      alert("Thêm tour thành công!");
+      toast.success("Thêm tour thành công!");
+
+      // Reset form
+      setName("");
+      setDestination("");
+      setDuration("");
+      setPrice("");
+      setAvailable("");
+      setImage("");
     } catch (err) {
       console.error(err);
-      alert("Lỗi khi thêm tour!");
+      toast.error("Lỗi khi thêm tour!");
     }
   };
 

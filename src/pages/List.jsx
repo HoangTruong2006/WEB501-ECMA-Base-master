@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function List() {
   const [tours, setTours] = useState([]);
@@ -18,6 +19,7 @@ function List() {
 
     getTours();
   }, []);
+
   const deleteTour = async (id) => {
     if (!confirm("Bạn chắc chắn muốn xóa Tour này chứ?")) return;
 
@@ -73,7 +75,17 @@ function List() {
                   {tour.price.toLocaleString()} ₫
                 </td>
                 <td className="px-4 py-2 border">{tour.available}</td>
-                <td className="px-4 py-2 border text-center">
+
+                <td className="px-4 py-2 border text-center flex gap-2 justify-center">
+                  {/* Nút Edit */}
+                  <Link
+                    to={`/edit/${tour.id}`}
+                    className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600"
+                  >
+                    Edit
+                  </Link>
+
+                  {/* Nút Delete */}
                   <button
                     onClick={() => deleteTour(tour.id)}
                     className="px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
