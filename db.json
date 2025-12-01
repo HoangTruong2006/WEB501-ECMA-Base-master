@@ -4,7 +4,7 @@
       "name": "Đà Lạt 4N3D",
       "destination": "Đà Lạt",
       "duration": "4 ngày 4 đêm",
-      "price": 3200000,
+      "price": 3200015,
       "available": "Còn chỗ",
       "image": "https://picsum.photos/400/300?random=3",
       "id": 3
@@ -31,10 +31,18 @@
       "name": "Du lịch 50 ngày tại điểm Nemo",
       "destination": "Giữa Biển",
       "duration": "50 ngày 50 đêm",
-      "price": 2,
+      "price": 1000,
       "available": "Còn chỗ",
       "image": "https://picsum.photos/400/300",
       "id": 6
+    }
+  ],
+  "users": [
+    {
+      "email": "haotruong4567@gmail.com",
+      "password": "$2a$10$Bg6JfPSJhNJQC7DwC2dOK.V6SG1Nv.D0Kfju5kvp9RsMrZv7KJZ46",
+      "name": "Samsung",
+      "id": 1
     }
   ]
 }
