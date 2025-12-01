@@ -26,7 +26,7 @@ function Add() {
       await axios.post("http://localhost:3000/tours", newTour);
       toast.success("Thêm tour thành công!");
 
-      // Reset form
+     
       setName("");
       setDestination("");
       setDuration("");
@@ -93,7 +93,7 @@ function Add() {
           />
         </div>
 
-        {/* Available */}
+        
         <div>
           <label className="block font-medium mb-1">Tình trạng</label>
           <select
@@ -108,7 +108,7 @@ function Add() {
           </select>
         </div>
 
-        {/* Image */}
+       
         <div>
           <label className="block font-medium mb-1">Ảnh</label>
           <input
@@ -121,7 +121,7 @@ function Add() {
           />
         </div>
 
-        {/* Submit */}
+        
         <button
           type="submit"
           className="px-5 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"

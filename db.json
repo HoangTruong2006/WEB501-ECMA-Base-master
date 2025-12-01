@@ -26,6 +26,15 @@
       "available": "Còn chỗ",
       "image": "https://picsum.photos/400/300",
       "id": 5
+    },
+    {
+      "name": "Du lịch 50 ngày tại điểm Nemo",
+      "destination": "Giữa Biển",
+      "duration": "50 ngày 50 đêm",
+      "price": 2,
+      "available": "Còn chỗ",
+      "image": "https://picsum.photos/400/300",
+      "id": 6
     }
   ]
 }
