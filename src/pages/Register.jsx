@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 
 
@@ -25,10 +26,10 @@ function Register() {
 
     try {
     const res = await axios.post("http://localhost:3000/register", form);
-      alert("Đăng ký thành công!");
+      toast.success("Đăng ký thành công!");
       navigate("/login");
     } catch (error) {
-      alert("Lỗi đăng ký!");
+      toast.error("Lỗi đăng ký!");
       console.log(error);
     }
   };
