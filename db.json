@@ -7,7 +7,8 @@
       "price": 219990,
       "available": "Còn chỗ",
       "image": "https://picsum.photos/400/300?random=3",
-      "id": 3
+      "id": 3,
+      "status": "inactive"
     },
     {
       "name": "Tour du lịch Ai Cập ",
@@ -16,7 +17,8 @@
       "price": 24000000,
       "available": "Còn chỗ",
       "image": "https://picsum.photos/400/300?random=4",
-      "id": 4
+      "id": 4,
+      "status": "inactive"
     },
     {
       "name": "Du Lịch Anh Quốc 2N3D",
@@ -25,7 +27,8 @@
       "price": 160000000,
       "available": "Còn chỗ",
       "image": "https://picsum.photos/400/300",
-      "id": 5
+      "id": 5,
+      "status": "inactive"
     }
   ],
   "users": [
